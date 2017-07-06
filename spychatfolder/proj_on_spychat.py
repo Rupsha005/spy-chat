@@ -109,7 +109,7 @@ elif user == '2':
                     print 'you are great \n'
                 else:
                     print 'improve yourself! \n'
-        print 'HI' + custom_user_name + ' YOU ARE ' + salutation + ', YOU ARE ' + str(
+        print 'HI' + user_name + ' YOU ARE ' + salutation + ', YOU ARE ' + str(
             user_age) + ' YEARS OLD & YOUR"S RATING IS ' + str(user_rating)
     else:
         print 'Invalid Choice, Enter a Valid Name \n'
@@ -135,7 +135,7 @@ elif user == '2':
             friend_name = raw_input('Enter Friend\'s Name: \n')  # Enter the Friend's Name
             friend_age = raw_input('Enter Friend\'s Age: \n')  # Enter the Friend's Age
             friend_rating = raw_input('Enter Friend\'s Rating: \n')  # Enter the Friend's Rating
-            if friend_name not in friend_list_name:  # Check if name exist in the list
+            if friend_name not in name_friend_list:  # Check if name exist in the list
                 name_friend_list.append(friend_name)  # if not available append to the list
                 print name_friend_list  # print the new updated list
             else:
@@ -169,7 +169,7 @@ elif user == '2':
                 output_image = raw_input('Enter output image name with .png extension: \n')  # Path of Output Image
                 Steganography.encode(input_image_path, output_image, text)  # Steganography arguments
                 secret_text = Steganography.decode(output_image)  # Decoding the secret message
-                secret_msg.append(secret_text)
+                secret_message.append(secret_text)
         elif choice == '4':
             print 'Read the Secret Message \n'  # Chooses to read the Secret Message
             if secret_message:
@@ -178,7 +178,7 @@ elif user == '2':
                 print 'No Message Received \n'  # Else print no message received
         elif choice == '5':
             print 'You Chose to Read the Entire Chat History \n'  # Chooses to read the Entire Chat History
-            if secret_msg:  # If a Secret Message is sent, means the user is having a chat with a friend
+            if secret_message:  # If a Secret Message is sent, means the user is having a chat with a friend
                 print 'You Contacted ' + str(select_a_friend) + ' and you sent him ' + str(
                     secret_text)  # print the name of the user's friend and the secret
             else:
